@@ -10,9 +10,9 @@ model = joblib.load("lgb.pkl")
 
 # 特征顺序
 model_feature_names = ['TG', 'ALT', 'HDL-C', 'Eosinophil', 'Ures', 'PA', 'RDW-SD', 'D-D',
-                       'APTT', 'GLB', 'CCP', 'AST', 'ALB', 'UA', 'LCL-C', 'Arthralgia', 'P-LCR', 'WBC']
+                       'APTT']
 
-# 特征范围定义（含 Arthralgia 三分类）
+# 特征范围定义
 feature_ranges = {
     "TG":         { "type": "numerical", "min": 0,   "max": 10,  "default": 1.5 },
     "ALT":        { "type": "numerical", "min": 0,   "max": 200, "default": 25 },
@@ -23,15 +23,7 @@ feature_ranges = {
     "RDW-SD":     { "type": "numerical", "min": 30,  "max": 60,  "default": 42 },
     "D-D":        { "type": "numerical", "min": 0,   "max": 5,   "default": 0.5 },
     "APTT":       { "type": "numerical", "min": 20,  "max": 70,  "default": 35 },
-    "GLB":        { "type": "numerical", "min": 15,  "max": 40,  "default": 25 },
-    "CCP":        { "type": "numerical", "min": 0,   "max": 200, "default": 20 },
-    "AST":        { "type": "numerical", "min": 0,   "max": 200, "default": 25 },
-    "ALB":        { "type": "numerical", "min": 20,  "max": 60,  "default": 40 },
-    "UA":         { "type": "numerical", "min": 100, "max": 600, "default": 350 },
-    "LCL-C":      { "type": "numerical", "min": 1,   "max": 7,   "default": 3 },
-    "Arthralgia": { "type": "categorical", "options": [0, 1, 2], "default": 0 },  # 三分类
-    "P-LCR":      { "type": "numerical", "min": 10,  "max": 60,  "default": 25 },
-    "WBC":        { "type": "numerical", "min": 0,   "max": 20,  "default": 5 },
+    
 }
 
 # Streamlit 界面
